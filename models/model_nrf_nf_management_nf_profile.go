@@ -118,6 +118,7 @@ type NrfNfManagementNfProfile struct {
 	Var5gDdnmfInfo *Model5GDdnmfInfo   `json:"5gDdnmfInfo,omitempty" yaml:"5gDdnmfInfo" bson:"5gDdnmfInfo,omitempty"`
 	MfafInfo       *MfafInfo           `json:"mfafInfo,omitempty" yaml:"mfafInfo" bson:"mfafInfo,omitempty"`
 	// A map (list of key-value pairs) where a (unique) valid JSON string serves as key of EasdfInfo
+	EasdfInfo     *EasdfInfo           `json:"easdfInfo,omitempty" yaml:"easdfInfo" bson:"easdfInfo,omitempty"`
 	EasdfInfoList map[string]EasdfInfo `json:"easdfInfoList,omitempty" yaml:"easdfInfoList" bson:"easdfInfoList,omitempty"`
 	DccfInfo      *DccfInfo            `json:"dccfInfo,omitempty" yaml:"dccfInfo" bson:"dccfInfo,omitempty"`
 	// A map (list of key-value pairs) where a (unique) valid JSON string serves as key of NsacfInfo
