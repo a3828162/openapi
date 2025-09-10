@@ -14,14 +14,28 @@ package models
 
 // Represents DN performance data.
 type PerfData struct {
+
 	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
 	AvgTrafficRate string `json:"avgTrafficRate,omitempty" yaml:"avgTrafficRate" bson:"avgTrafficRate,omitempty"`
 	// String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix \"K\" is used to represent the standard symbol \"k\".
-	MaxTrafficRate string `json:"maxTrafficRate,omitempty" yaml:"maxTrafficRate" bson:"maxTrafficRate,omitempty"`
+	MaxTrafficRate string   `json:"maxTrafficRate,omitempty" yaml:"maxTrafficRate" bson:"maxTrafficRate,omitempty"`
+	MinTrafficRate string   `json:"minTrafficRate,omitempty" yaml:"minTrafficRate" bson:"minTrafficRate,omitempty"`
+	AggTrafficRate string   `json:"aggTrafficRate,omitempty" yaml:"aggTrafficRate" bson:"aggTrafficRate,omitempty"`
+	VarTrafficRate string   `json:"varTrafficRate,omitempty" yaml:"varTrafficRate" bson:"varTrafficRate,omitempty"`
+	TrafRateUeIds  []string `json:"trafRateUeIds,omitempty" yaml:"trafRateUeIds" bson:"trafRateUeIds,omitempty"`
+
 	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
 	AvePacketDelay int32 `json:"avePacketDelay,omitempty" yaml:"avePacketDelay" bson:"avePacketDelay,omitempty"`
 	// Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
-	MaxPacketDelay int32 `json:"maxPacketDelay,omitempty" yaml:"maxPacketDelay" bson:"maxPacketDelay,omitempty"`
+	MaxPacketDelay int32    `json:"maxPacketDelay,omitempty" yaml:"maxPacketDelay" bson:"maxPacketDelay,omitempty"`
+	VarPacketDelay int32    `json:"varPacketDelay,omitempty" yaml:"varPacketDelay" bson:"varPacketDelay,omitempty"`
+	PackDelayUeIds []string `json:"packDelayUeIds,omitempty" yaml:"packDelayUeIds" bson:"packDelayUeIds,omitempty"`
+
 	// Unsigned integer indicating Packet Loss Rate (see clauses 5.7.2.8 and 5.7.4 of 3GPP TS 23.501), expressed in tenth of percent.
-	AvgPacketLossRate int32 `json:"avgPacketLossRate,omitempty" yaml:"avgPacketLossRate" bson:"avgPacketLossRate,omitempty"`
+	AvgPacketLossRate int32    `json:"avgPacketLossRate,omitempty" yaml:"avgPacketLossRate" bson:"avgPacketLossRate,omitempty"`
+	MaxPacketLossRate int32    `json:"maxPacketLossRate,omitempty" yaml:"maxPacketLossRate" bson:"maxPacketLossRate,omitempty"`
+	VarPacketLossRate int32    `json:"varPacketLossRate,omitempty" yaml:"varPacketLossRate" bson:"varPacketLossRate,omitempty"`
+	PackLossUeIds     []string `json:"packLossUeIds,omitempty" yaml:"packLossUeIds" bson:"packLossUeIds,omitempty"`
+
+	NumOfUe uint32 `json:"numOfUEs,omitempty" yaml:"numOfUEs" bson:"numOfUEs,omitempty"`
 }
